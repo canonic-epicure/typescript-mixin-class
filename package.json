@@ -1,6 +1,6 @@
 {
   "name": "typescript-mixin-class",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Mixin pattern for TypeScript",
   "main": "index.js",
   "module": "index.js",
@@ -17,11 +17,11 @@
   "author": "Nickolay Platonov",
   "license": "MIT",
   "dependencies": {
-    "chained-iterator": "/home/nickolay/workspace/typescript/chained-iterator/"
+    "chained-iterator": "^0.0.2"
   },
   "devDependencies": {
     "typescript": "^4.3.5",
     "@web/dev-server": "^0.1.17",
-    "@bryntum/siesta": "/home/nickolay/workspace/Bryntum/siesta-monorepo/siesta/DIST/"
+    "@bryntum/siesta": "^6.0.0-alpha-3"
   }
 }
