@@ -312,7 +312,7 @@ export type ClassUnion<
 // custom version of Omit<T> that preserves the "new"-ability of the given type
 type Omit2<T, K extends keyof any> = T extends AnyConstructorRaw<infer I> ? Pick<T, Exclude<keyof T, K>> & (new (...args : any[]) => I) : never
 
-export interface StaticPartOfMixinConstructor<M, T extends AnyFunction<M>> {
+interface StaticPartOfMixinConstructor<M, T extends AnyFunction<M>> {
     mix?        : Parameters<T> extends [ infer Base ] ?
         Base extends AnyConstructorRaw ?
             M extends AnyConstructorRaw<infer MI, infer MS> ?
