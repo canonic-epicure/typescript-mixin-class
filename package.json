@@ -5,9 +5,12 @@
   "main": "index.js",
   "module": "index.js",
   "type": "module",
-  "homepage": "https://github.com/bryntum/siesta",
-  "bugs": "https://github.com/bryntum/siesta/issues",
-  "repository": "git@github.com:bryntum/siesta.git",
+  "homepage": "https://github.com/canonic-epicure/typescript-mixin-class",
+  "bugs": "https://github.com/canonic-epicure/typescript-mixin-class/issues",
+  "repository": "git@github.com:canonic-epicure/typescript-mixin-class.git",
+  "scripts": {
+    "test": "node ./tests/index.js"
+  },
   "keywords": [
     "mixin",
     "pattern",
