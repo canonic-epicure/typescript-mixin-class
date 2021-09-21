@@ -1,10 +1,10 @@
 import { CI, MemoizedIterator, MI } from "chained-iterator/index.js"
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const MixinInstanceOfProperty   = Symbol('MixinIdentity')
 const MixinStateProperty        = Symbol('MixinStateProperty')
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 type MixinStateExtension = {
     [MixinInstanceOfProperty]   : symbol
     [MixinStateProperty]        : MixinState
@@ -15,7 +15,7 @@ type MixinFunction   = ((base : AnyConstructor) => AnyConstructor) & MixinStateE
 type MixinClass      = AnyConstructor & MixinStateExtension
 
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class MixinWalkDepthState {
     baseEl                          : MixinState                    = undefined
     sourceEl                        : MixinState                    = undefined
@@ -103,24 +103,24 @@ class MixinWalkDepthState {
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 type MixinId         = number
 type MixinHash       = string
 
 // Note: 65535 mixins only, because of the hashing function implementation (String.fromCharCode)
 let MIXIN_ID : MixinId      = 1
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const identity              = a => class extends a {}
 
 // export type IdentityMixin<Base extends object>         = < T extends AnyConstructor<Base>>(base : T) => T
 //
 // export const IdentityMixin             = <Base extends object>() : IdentityMixin<Base> => identity
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export class ZeroBaseClass {}
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class MixinState {
     id                          : MixinId               = MIXIN_ID++
 
@@ -264,7 +264,7 @@ class MixinState {
 
 
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // translates all properties of the given type T, except its "new-ability" (which will mess up the typing)
 type SuppressNew<T> = {
     [ K in keyof T ] : T[ K ]
@@ -285,7 +285,7 @@ export type AnyConstructor<Instance extends object = object, Static extends obje
 
 export type Mixin<T extends AnyFunction> = InstanceType<ReturnType<T>>
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 type ZeroBaseClassConstructor = typeof ZeroBaseClass
 
 /**
@@ -308,7 +308,7 @@ export type ClassUnion<
         & SuppressNew<C1 & C2 & C3 & C4 & C5 & C6 & C7 & C8 & C9 & C10>
 
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // custom version of Omit<T> that preserves the "new"-ability of the given type
 type Omit2<T, K extends keyof any> = T extends AnyConstructorRaw<infer I> ? Pick<T, Exclude<keyof T, K>> & (new (...args : any[]) => I) : never
 
@@ -330,7 +330,7 @@ interface StaticPartOfMixinConstructor<M, T extends AnyFunction<M>> {
     : never
 }
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // region type helpers
 type MixinClassConstructor<T> =
     T extends AnyFunction<infer M> ?
@@ -467,7 +467,7 @@ type MixinHelperFunc10 = <A1 extends AnyConstructor, A2 extends AnyConstructor, 
 // endregion
 
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // region type helpers for custom mixins
 type MixinCustomClassConstructor<T> =
     T extends AnyFunction<infer M> ?
@@ -603,7 +603,7 @@ type MixinCustomHelperFunc10 = <A1 extends AnyConstructor, A2 extends AnyConstru
     : never
 // endregion
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const isMixinClass = (func : AnyConstructor) : boolean => {
     const superProto    = Object.getPrototypeOf(func.prototype)
 
@@ -617,7 +617,7 @@ const getMixinState = (func : AnyConstructor) : MixinState => {
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const mixin = <T>(required : (AnyConstructor | MixinClass)[], mixinLambda : T) : MixinClassConstructor<T> => {
     let baseClass : AnyConstructor
 
@@ -672,7 +672,7 @@ const mixin = <T>(required : (AnyConstructor | MixinClass)[], mixinLambda : T) :
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // this function works both with default mixin class and mixin application function
 // it supplied internally as [Symbol.hasInstance] for the default mixin class and mixin application function
 const isInstanceOfStatic  = function (this : MixinFunction | MixinClass, instance : any) : boolean {
@@ -683,7 +683,7 @@ const isInstanceOfStatic  = function (this : MixinFunction | MixinClass, instanc
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * This is the `instanceof` analog for the classes created with [[Mixin]] helper. It also provides [typeguard](https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards).
  *

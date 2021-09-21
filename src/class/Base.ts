@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------------------------------------------------
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * This is a base class, providing the type-safe static constructors [[new]] and [[maybeNew]]. This is very convenient when using
  * [[Mixin|mixins]], as mixins can not have types in the constructors.
