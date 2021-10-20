@@ -33,7 +33,7 @@ export class Base {
      *
      * will produce:
      *
-     * ```plaintext
+     * ```
      * TS2345: Argument of type '{ prop: string; wrong: number; }' is not assignable to parameter of type 'Partial<MyClass>'.   
      * Object literal may only specify known properties, and 'wrong' does not exist in type 'Partial<MyClass>'
      * ```
