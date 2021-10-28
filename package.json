@@ -1,30 +1,31 @@
 {
-  "name": "typescript-mixin-class",
-  "version": "0.0.1",
-  "description": "Mixin pattern for TypeScript",
-  "main": "index.js",
-  "module": "index.js",
-  "type": "module",
-  "homepage": "https://github.com/canonic-epicure/typescript-mixin-class",
-  "bugs": "https://github.com/canonic-epicure/typescript-mixin-class/issues",
-  "repository": "git@github.com:canonic-epicure/typescript-mixin-class.git",
-  "scripts": {
-    "test": "node ./tests/index.js"
-  },
-  "keywords": [
-    "mixin",
-    "pattern",
-    "typescript",
-    "class"
-  ],
-  "author": "Nickolay Platonov",
-  "license": "MIT",
-  "dependencies": {
-    "chained-iterator": "^0.0.2"
-  },
-  "devDependencies": {
-    "typescript": "^4.3.5",
-    "@web/dev-server": "^0.1.17",
-    "@bryntum/siesta": "^6.0.0-alpha-3"
-  }
+    "name": "typescript-mixin-class",
+    "version": "0.0.1",
+    "description": "Mixin pattern for TypeScript",
+    "main": "index.js",
+    "module": "index.js",
+    "type": "module",
+    "homepage": "https://github.com/canonic-epicure/typescript-mixin-class",
+    "bugs": "https://github.com/canonic-epicure/typescript-mixin-class/issues",
+    "repository": "git@github.com:canonic-epicure/typescript-mixin-class.git",
+    "scripts": {
+        "test": "node ./tests/index.js"
+    },
+    "keywords": [
+        "mixin",
+        "pattern",
+        "typescript",
+        "class"
+    ],
+    "author": "Nickolay Platonov",
+    "license": "MIT",
+    "dependencies": {
+        "chained-iterator": "^0.0.3"
+    },
+    "devDependencies": {
+        "typedoc": "^0.22.7",
+        "typescript": "^4.3.5",
+        "@web/dev-server": "^0.1.17",
+        "@bryntum/siesta": "^6.0.0-alpha-3"
+    }
 }

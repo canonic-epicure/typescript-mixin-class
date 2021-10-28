@@ -1,6 +1,5 @@
 import { it } from "@bryntum/siesta/index.js"
-import { Base } from "../../src/class/Base.js"
-import { AnyConstructor, ClassUnion, isInstanceOf, Mixin, MixinCustom } from "../../src/class/Mixin.js"
+import { Base, AnyConstructor, ClassUnion, isInstanceOf, Mixin, MixinCustom } from "../../index.js"
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export class SomeMixin1 extends MixinCustom(

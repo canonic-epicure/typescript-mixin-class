@@ -1,2 +1,2 @@
-export * from './src/class/Mixin.js'
-export * from './src/class/Base.js'
+export { Mixin, MixinAny, MixinCustom, MixinCustomAny, isInstanceOf, ZeroBaseClass, AnyConstructor, AnyFunction, ClassUnion } from './src/class/Mixin.js'
+export { Base } from './src/class/Base.js'

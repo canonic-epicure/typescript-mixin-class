@@ -1,6 +1,5 @@
 import { it } from "@bryntum/siesta/index.js"
-import { Base } from "../../src/class/Base.js"
-import { AnyConstructor, ClassUnion, Mixin, MixinCustom, ZeroBaseClass } from "../../src/class/Mixin.js"
+import { Base, AnyConstructor, ClassUnion, isInstanceOf, Mixin, MixinCustom, ZeroBaseClass } from "../../index.js"
 
 it('Repeating creation with the same requirements should not call mixin functions and use cache', t => {
     let count1 = 0
