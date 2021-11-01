@@ -20,7 +20,7 @@
     "author": "Nickolay Platonov",
     "license": "MIT",
     "dependencies": {
-        "chained-iterator": "^0.0.3"
+        "chained-iterator": "^0.0.4"
     },
     "devDependencies": {
         "typedoc": "^0.22.7",
